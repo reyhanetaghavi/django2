@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Cordoba';
+    src: url('/static/fonts/Far_CordobaOut.ttf') format('truetype');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* لایه تیره */
+        url('/static/media/IMG-4231.jpg'); /* مسیر تصویر پس‌زمینه */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* ارتفاع کل صفحه */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.restaurant-name {
+    font-family: 'Cordoba', sans-serif; /* استفاده از فونت زیبای لاله‌زار */
+    font-size: 13rem; /* افزایش سایز فونت */
+    color: white;
+    margin-bottom: 100px;
+    margin-top: 20px;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7); /* سایه بیشتر برای خوانایی بهتر */
+    letter-spacing: 2px; /* افزایش فاصله بین حروف */
+    line-height: 1.2; /* تنظیم فاصله بین خطوط */
+}
+
+.container {
+    position: absolute;
+    top: 20px; /* فاصله از بالای صفحه */
+    left: 50%;
+    transform: translateX(-50%); /* مرکز کردن متن */
+    text-align: center;
+    width: 100%;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: center; /* برای قرار دادن دکمه‌ها در وسط */
+    gap: 20px;
+}
+
+.circle-button {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.7); /* رنگ پس‌زمینه دکمه‌ها */
+    margin: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.circle-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+

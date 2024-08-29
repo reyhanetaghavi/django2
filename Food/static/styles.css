@@ -1,0 +1,374 @@
+@font-face {
+    font-family: 'Lalezar';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar-Regular.woff2') format('woff2'),
+         url('https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Classic';
+    src: url('/static/fonts/Far_Classic.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Lalezar', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+.container {
+    display: flex;
+    font-family: 'Lalezar', sans-serif;
+
+}
+
+.sidebar {
+    width: 20%;
+    background-color: rgba(31, 63, 28, 0.958);
+    color: rgb(10, 10, 10);
+    padding: 15px;
+    position: sticky; 
+    top: 0; 
+    height: 100vh;
+    overflow-y: auto; 
+}
+
+.sidebar h2 {
+    font-size: 30px;
+    text-align: center;
+    background-image: linear-gradient(45deg,#0f5810, #39814e);
+    border: 5px solid;
+    border-image: linear-gradient(45deg, #39814e, #0f5810) 1;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.sidebar li img.icon {
+    margin-right: 50px;
+    width: 80px; /* تنظیم اندازه لوگو به دلخواه */
+    height: 80px; /* تنظیم اندازه لوگو به دلخواه */
+}
+
+
+
+.sidebar ul li a {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: larger;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+  }
+
+.content {
+    width: 80%;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+.food-category {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #167b19;
+    padding-bottom: 80px;
+    margin-left: 200px;
+}
+
+.food-category h2 {
+    font-family: 'Classic', sans-serif;
+    font-size: 3em;
+    background: linear-gradient(90deg, #167b19, #4CAF50);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 4px double #167b19;
+    display: inline-block;
+    margin-top: 0;
+}
+
+
+.food-detail {
+    margin-bottom: 20px;
+}
+
+
+
+.pizza-img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    margin-right: 250px; /* تغییر به 20px */
+    display: block;
+    /* margin: 5 auto; */
+}
+
+.salad-img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 250px; /* تغییر به 20px */
+    display: block;
+}
+
+.drink-img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 350px; /* تغییر به 20px */
+    display: block;
+}
+
+.burger-img {
+    width: 350px;
+    height: 270px;
+    object-fit: cover;
+    margin-right: 250px; /* تغییر به 20px */
+    display: block;
+}
+
+.appetizer-img {
+    width: 380px;
+    height: 250px;
+    object-fit: cover;
+    margin-right: 250px; /* تغییر به 20px */
+    display: block;
+}
+
+.pasta-img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    margin-right: 250px; /* تغییر به 20px */
+    display: block;
+}
+
+.food-detail h3 {
+    margin: 0;
+    font-size: 1.6em; /* اندازه فونت بزرگ‌تر */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* سایه برای برجسته کردن متن */
+    margin-bottom: 0.5em; /* فاصله پایین برای جدا کردن از توضیحات */
+}
+
+.food-detail p.description {
+    font-size: 1em; /* اندازه فونت کمی بزرگ‌تر */
+    color: #444; /* رنگ متن تیره‌تر برای خوانایی بهتر */
+    line-height: 1.6; /* فاصله خطوط بیشتر برای خوانایی بهتر */
+    margin-top: 0.5em; /* فضای بالای توضیحات برای تفکیک بهتر */
+    margin-bottom: 1em; /* فضای پایین توضیحات برای تفکیک بهتر */
+    padding: 0.5em 0; /* فضای داخلی بالا و پایین برای جدا کردن متن از حاشیه */
+    border-right: 4px solid #167b19; /* حاشیه سمت چپ با رنگ اصلی برای برجسته کردن توضیحات */
+    padding-right: 20px;
+    padding-left: 1em; /* فضای داخلی سمت چپ برای فاصله دادن متن از حاشیه */
+}
+
+
+.buy-button {
+    background-color: #167b19; /* رنگ دکمه خرید */
+    font-weight: bold;
+    font-size: 20px;
+    color: white; /* رنگ متن دکمه خرید */
+    padding: 10px 15px; /* فاصله داخلی دکمه خرید */
+    border: none; /* حذف حاشیه */
+    border-radius: 5px; /* گوشه‌های گرد */
+    cursor: pointer; /* نشانگر اشاره‌گر */
+    margin-top: 10px; /* فاصله بالای دکمه خرید */
+    float: left;
+    margin-left: 200px;
+    width: 100px;
+    font-family: 'Lalezar', sans-serif;
+
+}
+
+.buy-button:hover {
+    background-color: #2d502f; /* رنگ دکمه خرید در حالت هاور */
+}
+
+
+/* Green Sidebar styling */
+.auth-sidebar {
+    background-color: green;
+    color: white;
+    width: 200px;
+    height: 100vh; /* ارتفاع کادر به اندازه کل ارتفاع صفحه */
+    position: fixed; /* ثابت ماندن در سمت چپ صفحه */
+    top: 0; /* کادر از بالای صفحه شروع می‌شود */
+    left: 0; /* کادر در سمت چپ صفحه قرار می‌گیرد */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1000; /* برای اطمینان از اینکه کادر روی سایر المان‌ها قرار گیرد */
+}
+
+.auth-sidebar p {
+    color: #070707; /* رنگ سبز */
+    font-size: 18px; /* اندازه فونت */
+    margin: 10px 0; /* فاصله بالا و پایین */
+}
+
+
+
+.auth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-button {
+    background-color: white;
+    color: green;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.auth-button:hover {
+    background-color: lightgray;
+}
+
+.logout-button{
+    background-color: white;
+    color: green;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 50px;
+    margin-top: 10px;
+}
+.logout-button:hover {
+    background-color: lightgray;
+}
+
+
+.basil-logo {
+    width: 200px; 
+    height: 200px;
+    margin-top: 450px;
+}
+
+
+.cart-container {
+    background-color: #e0f7e9;
+    border: 1px solid #b2d8c7;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    position: fixed;
+    top: 190px;
+    left: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.cart-title {
+    color: #388e3c;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-item {
+    background-color: #ffffff;
+    border: 1px solid #c8e6c9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+    color: #388e3c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item:last-child {
+    margin-bottom: 0;
+}
+
+.cart-total {
+    font-size: 18px;
+    color: #2e7d32;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+}
+
+
+
+.btn-primary {
+    background-color: #4CAF50; /* رنگ سبز */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* گوشه‌های گرد */
+    transition: background-color 0.3s; /* تغییر رنگ با انیمیشن */
+}
+
+.btn-primary:hover {
+    background-color: #45a049; /* رنگ سبز تیره‌تر هنگام هاور */
+}
+
+
+
+.order-success-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.order-success-title {
+    color: #2c6b2f; /* رنگ سبز تیره */
+}
+
+.order-success-message {
+    color: #333;
+    font-size: 1.2em;
+}
+

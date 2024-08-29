@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه ورود</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    <img class="basil-logo" src="{% static 'media/basil2.png' %}" alt="Basil">
+    <div class="login-container">
+        <button><a class="home-link" href="{% url 'menu' %}">بازگشت</a></button>
+        <h1>ورود به حساب کاربری</h1>
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                {{ form.username_or_phone.label_tag }}
+                {{ form.username_or_phone }}
+                {% if form.username_or_phone.errors %}
+                    <div class="error">{{ form.username_or_phone.errors }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.password.label_tag }}
+                {{ form.password }}
+                {% if form.password.errors %}
+                    <div class="error">{{ form.password.errors }}</div>
+                {% endif %}
+            </div>
+
+            <button type="submit">ورود</button>
+        </form>
+        <p>حساب کاربری ندارید؟ <a href="{% url 'signup' %}">ثبت نام کنید</a></p>
+    </div>
+</body>
+</html>

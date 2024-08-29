@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Classic';
+    src: url('/static/fonts/Far_Classic.ttf') format('truetype');
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* ارتفاع اسلایدر برابر با ارتفاع کل صفحه */
+    background-size: cover;
+    background-position: center;
+    animation: slideShow 15s infinite; /* انیمیشن اسلایدشو */
+}
+
+@keyframes slideShow {
+    0% { background-image: url('/static/media/IMG-4232.jpg'); }
+    33% { background-image: url('/static/media/IMG-4233.jpg'); }
+    66% { background-image: url('/static/media/p4.webp'); }
+    100% { background-image: url('/static/media/IMG-4232.jpg'); }
+}
+
+.info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* لایه تاریک برای خوانایی بهتر متن */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.info-overlay h1 {
+    font-size: 7em;
+    font-family: 'Classic', sans-serif;
+    margin-top: 10px;
+}
+
+.info-overlay p {
+    font-size: 1.5em;
+    margin: 5px 0;
+}
+
+.menu-button {
+    position: absolute;
+    bottom: 15%; /* فاصله از پایین صفحه، برای قرار دادن در وسط صفحه */
+    left: 50%;
+    transform: translateX(-50%); /* حرکت دکمه به وسط صفحه افقی */
+    padding: 10px 20px;
+    background-color: #149918; /* رنگ پس‌زمینه دکمه */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.menu-button:hover {
+    background-color: #38603a; /* تغییر رنگ پس‌زمینه در هنگام هاور */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}

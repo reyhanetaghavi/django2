@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رستوران ریحان</title>
+    <link rel="stylesheet" href="{% static 'information.css' %}">
+</head>
+<body>
+    <div class="slider">
+        <div class="info-overlay">
+            <h1>رستوران ریحان</h1>
+            <p>آدرس: سعادت آباد، بلوار دریا، نبش صرافهای جنوبی</p>
+            <p>شماره تماس: 021-88682541</p>
+            <p>ساعت کاری: 12:00 تا 23:30</p>
+        </div>
+    </div>
+    <a href="{% url 'menu' %}" class="menu-button">مشاهده منو</a>
+</body>
+</html>

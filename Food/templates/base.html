@@ -1,0 +1,128 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رستوران ریحون</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>انتخاب غذا</h2>
+            <ul>
+                <li><a href="#appetizers"><img src="{% static 'media/f.svg' %}" alt="Fries" class="icon">پیش غذا</a></li>
+                <li><a href="#salads"><img src="{% static 'media/s.svg' %}" alt="Salad" class="icon">سالاد</a></li>
+                <li><a href="#pizzas"><img src="{% static 'media/p3svg.svg' %}" alt="Pizza" class="icon">پیتزا</a></li>
+                <li><a href="#burgers"><img src="{% static 'media/b.png' %}" alt="Burger" class="icon">برگر</a></li>
+                <li><a href="#pastas"><img src="{% static 'media/pasta.svg' %}" alt="Pasta" class="icon">پاستا</a></li>
+                <li><a href="#drinks"><img src="{% static 'media/d.png' %}" alt="Drink" class="icon">نوشیدنی</a></li>
+            </ul>
+        </div>
+                
+        <div class="content">
+            <div id="appetizers" class="food-category">
+                <h2>پیش غذا</h2>
+                {% for appetizer in appetizers %}
+                <div class="food-detail">
+                    <img class="appetizer-img" src="{{ appetizer.image.url }}" alt="{{ appetizer.name }}">
+                    <h3>{{ appetizer.name }}</h3>
+                    <p class="description">{{ appetizer.description }}</p>
+                    <p>قیمت: {{ appetizer.price }} تومان</p>
+                    <form action="{% url 'add_to_cart' 'appetizer' appetizer.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="buy-button">خرید</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+            <div id="salads" class="food-category">
+                <h2>سالاد</h2>
+                {% for salad in salads %}
+                <div class="food-detail">
+                    <img class="salad-img" src="{{ salad.image.url }}" alt="{{ salad.name }}">
+                    <h3>{{ salad.name }}</h3>
+                    <p class="description">{{ salad.description }}</p>
+                    <p>قیمت: {{ salad.price }} تومان</p>
+                    <form action="{% url 'add_to_cart' 'salad' salad.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="buy-button">خرید</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+            <div id="pizzas" class="food-category">
+                <h2>پیتزا</h2>
+                {% for pizza in pizzas %}
+                <div class="food-detail">
+                    <img class="pizza-img" src="{{ pizza.image.url }}" alt="{{ pizza.name }}">
+                    <h3>{{ pizza.name }}</h3>
+                    <p class="description">{{ pizza.description }}</p>
+                    <p>قیمت: {{ pizza.price }} تومان</p>
+                    <form action="{% url 'add_to_cart' 'pizza' pizza.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="buy-button">خرید</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+            <div id="burgers" class="food-category">
+                <h2>برگر</h2>
+                {% for burger in burgers %}
+                <div class="food-detail">
+                    <img class="burger-img" src="{{ burger.image.url }}" alt="{{ burger.name }}">
+                    <h3>{{ burger.name }}</h3>
+                    <p class="description">{{ burger.description }}</p>
+                    <p>قیمت: {{ burger.price }} تومان</p>
+                    <form action="{% url 'add_to_cart' 'burger' burger.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="buy-button">خرید</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+            <div id="pastas" class="food-category">
+                <h2>پاستا</h2>
+                {% for pasta in pastas %}
+                <div class="food-detail">
+                    <img class= "pasta-img" src="{{ pasta.image.url }}" alt="{{ pasta.name }}">
+                    <h3>{{ pasta.name }}</h3>
+                    <p class="description">{{ pasta.description }}</p>
+                    <p>قیمت: {{ pasta.price }} تومان</p>
+                    <form action="{% url 'add_to_cart' 'pasta' pasta.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="buy-button">خرید</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+            <div id="drinks" class="food-category">
+                <h2>نوشیدنی</h2>
+                {% for drink in drinks %}
+                <div class="food-detail">
+                    <img class = "drink-img" src="{{ drink.image.url }}" alt="{{ drink.name }}">
+                    <h3>{{ drink.name }}</h3>
+                    <p class="description">{{ drink.description }}</p>
+                    <p>قیمت: {{ drink.price }} تومان</p>
+                    <form action="{% url 'add_to_cart' 'drink' drink.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="buy-button">خرید</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="auth-sidebar">
+            {% block something %}{% endblock %}
+            <img class="basil-logo" src="{% static 'media/basil.png' %}" alt="Basil">
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+
+
+    
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ساخت پروفایل</title>
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+</head>
+<body dir="rtl">
+    <div class="profile-container">
+        <h1>ساخت پروفایل</h1>
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                {{ form.name.label_tag }} {{ form.name }}
+                {% if form.name.errors %}
+                    <div class="error-message">{{ form.name.errors }}</div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                {{ form.family_name.label_tag }} {{ form.family_name }}
+                {% if form.family_name.errors %}
+                    <div class="error-message">{{ form.family_name.errors }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.gender.label_tag }} {{ form.gender }}
+                {% if form.gender.errors %}
+                    <div class="error-message">{{ form.gender.errors }}</div>
+                {% endif %}
+            </div>
+
+            <button type="submit">ثبت پروفایل</button>
+        </form>
+    </div>
+    <img class="basil-logo" src="{% static 'media/bsl.png' %}" alt="Basil">
+</body>
+</html>

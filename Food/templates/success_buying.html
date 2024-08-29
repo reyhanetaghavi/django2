@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block something %}
+    <div class="welcome">
+        {% if profile %}
+        <h3> {{ profile.name }} {{ profile.family_name }}</h3>
+        <h3>خوش آمدید!</h3>
+    {% else %}
+        <h3>خوش آمدید!</h3>
+    {% endif %}
+    </div>
+    <a href="{% url 'logout' %}" class="logout-button">خروج</a>
+{% endblock %}
+
+{% block content %}
+<div class="cart-container">
+    <div class="order-success-container">
+        <h1 class="order-success-title">با تشکر از سفارش شما!</h1>
+        <p class="order-success-message">سفارش شما با موفقیت ثبت شد.</p>
+    </div>
+</div>
+{% endblock %}

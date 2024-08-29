@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block something %}
+    <div class="welcome">
+        {% if profile %}
+        <h3> {{ profile.name }} {{ profile.family_name }}</h3>
+        <h3>خوش آمدید!</h3>
+    {% else %}
+        <h3>خوش آمدید!</h3>
+    {% endif %}
+    </div>
+    <a href="{% url 'logout' %}" class="logout-button">خروج</a>
+{% endblock %}
+
+
+
+
+
+
